@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SD Negeri 3 Kesiman</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f7f6;
+            text-align: center;
+        }
+
+        header {
+            background: #16865c;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        main {
+            padding: 60px 20px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 22px;
+            background: #16865c;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>SD Negeri 3 Kesiman</h1>
+    <p>Website Resmi Sekolah</p>
+</header>
+
+<main>
+    <h2>Selamat Datang</h2>
+
+    <p>
+        Selamat datang di website resmi SD Negeri 3 Kesiman.
+    </p>
+
+    <p>
+        Website ini akan menjadi pusat informasi, berita,
+        kegiatan, dan pengumuman sekolah.
+    </p>
+
+    <a class="button" href="#">
+        Lihat Profil Sekolah
+    </a>
+</main>
+
+<footer>
+    © 2026 SD Negeri 3 Kesiman
+</footer>
+
+</body>
+</html>
