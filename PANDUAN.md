@@ -1,43 +1,59 @@
 # Panduan website SD Negeri 3 Kesiman
 
-## Status versi pertama
+## Status versi redesign
 
-Website statis satu halaman, tanpa instalasi paket atau proses build. Semua menu menuju bagian di halaman yang sama. Bagian Profil menggunakan elemen `details` yang bisa dibuka dan ditutup. Data sekolah yang belum diberikan sengaja belum diisi.
+Website statis multipage, tanpa instalasi paket atau proses build. Beranda memakai foto kegiatan sebagai hero dan mengutamakan akses cepat untuk Pengumuman, Agenda, SPMB, dan Download. Halaman Profil, Akademik, Kesiswaan, Ekstrakurikuler, Prestasi, Berita, Pengumuman, Agenda, Galeri, Download, SPMB, dan Kontak sudah memiliki route tersendiri.
+
+Nama dan foto kepala sekolah mengikuti data yang sudah dikonfirmasi. Berita, prestasi, guru, agenda, pengumuman, berkas unduhan, serta saluran kontak yang belum tersedia memakai empty state yang jelas dan tidak diisi dengan data buatan.
 
 File asli `README.md` dan `index` dipertahankan. File asli bernama `index` (tanpa ekstensi), sehingga ditambahkan `index.html` sebagai beranda GitHub Pages. File `index` hanya arsip versi sebelumnya dan tidak digunakan oleh halaman baru.
 
 ## Struktur
 
 ```text
-index.html                         Isi halaman dan semua bagian menu
+index.html                         Beranda utama
+profil/ dan profil/*/              Profil, visi-misi, sejarah, dan GTK
+akademik/, kesiswaan/              Informasi akademik dan kesiswaan
+ekstrakurikuler/, prestasi/        Kegiatan dan ruang prestasi
+program/*/                         Detail Gelis Manis, Nupera, Gerustik, dan 7 KAIH
+berita/ dan berita/detail/         Daftar dan pola detail berita
+pengumuman/, agenda/, galeri/      Pusat informasi dan dokumentasi
+download/, spmb/, kontak/          Layanan publik sekolah
 assets/css/style.css               Warna, tata letak, dan tampilan responsif
 assets/js/main.js                  Menu HP dan tahun pada footer
 assets/images/ilustrasi-sekolah.svg Ilustrasi dekoratif, bukan foto sekolah
 assets/images/logo-sekolah.png     Logo yang diberikan dan disetujui sekolah
+assets/images/kegiatan-pengibaran.jpg Foto kegiatan yang diberikan pengguna
+assets/images/kegiatan-upacara.jpg    Foto kegiatan yang diberikan pengguna
+assets/images/kepala-sekolah.png      Foto kepala sekolah yang diberikan pengguna
 README.md                          README asli
 index                              Halaman asli, dipertahankan
 PANDUAN.md                         Panduan ini
+robots.txt                         Aturan perayapan mesin pencari
+sitemap.xml                        Daftar halaman untuk mesin pencari
 ```
 
-Logo pada header berasal dari `logoupscale.png` yang diberikan pengguna, disalin tanpa mengubah gambar. Nama kepala sekolah (Desak Nyoman Sari, S.Pd.SD), alamat, visi, tujuh butir misi, dan program bersumber dari dokumen kurikulum serta telah dikonfirmasi pengguna. Program Gelis Manis, Gerustik, bahasa dan budaya Bali, serta pilihan ekstrakurikuler ditampilkan; jadwalnya masih menunggu konfirmasi. Sambutan kepala sekolah tidak dibuat tanpa teks resmi.
+Setiap program unggulan memiliki halaman detail dengan bagian tentang program, visi, misi, pelaksanaan, galeri, dan tautan ke program lain. Galeri memakai placeholder sampai foto khusus program beserta tanggal dan keterangannya tersedia. Jurnal Digital 7 KAIH belum diberi tautan karena alamat layanan resminya belum tersedia.
+
+Logo pada header berasal dari `logoupscale.png` yang diberikan pengguna, disalin tanpa mengubah gambar. Foto kegiatan dan foto kepala sekolah berasal dari berkas yang diberikan pengguna; nama peserta didik tidak dicantumkan. Gambar JPEG dioptimalkan ke lebar maksimum 1200 piksel. Nama kepala sekolah (Desak Nyoman Sari, S.Pd.SD), alamat, visi, tujuh butir misi, dan program bersumber dari dokumen kurikulum serta telah dikonfirmasi pengguna. Program Gelis Manis, Nupera, Gerustik, 7 KAIH, Teman Berbagi, bahasa dan budaya Bali, serta pilihan ekstrakurikuler ditampilkan; jadwalnya masih menunggu konfirmasi.
 
 Dokumen kurikulum asli tidak dimasukkan ke website. Statistik siswa/guru belum ditampilkan karena angka siswa dalam sumber merupakan prediksi dan terdapat perbedaan tahun ajaran. NIP dan tanda tangan tidak ditampilkan.
 
 ## Cara mengetes
 
-1. Buka `index.html` dengan Chrome, Edge, atau Firefox.
-2. Klik seluruh menu. Setiap tautan harus menuju bagian yang sesuai.
-3. Buka dan tutup empat bagian Profil Sekolah.
-4. Kecilkan jendela atau gunakan DevTools (F12), lalu mode perangkat. Periksa lebar 360, 390, 768, dan 1440 piksel. Halaman tidak boleh bergeser horizontal.
-5. Pada lebar HP, klik Menu, pilih bagian, lalu pastikan menu menutup. Tombol Escape juga menutup menu.
-6. Coba tombol Tab untuk berpindah tautan dan tombol; fokus harus terlihat.
-7. Semua isi tetap dapat diakses saat JavaScript dimatikan.
+1. Jalankan server lokal dari folder repository, misalnya melalui Live Server.
+2. Buka beranda dan klik seluruh menu. Setiap tautan harus membuka halaman atau bagian yang sesuai.
+3. Gunakan DevTools (F12), lalu mode perangkat. Periksa lebar 360, 390, 768, 1024, dan 1440 piksel. Halaman tidak boleh bergeser horizontal.
+4. Pada lebar HP, klik Menu, pilih halaman, lalu pastikan menu menutup. Tombol Escape juga menutup menu.
+5. Coba tombol Tab untuk berpindah tautan dan tombol; fokus harus terlihat.
+6. Pastikan logo, foto kegiatan, foto kepala sekolah, CSS, dan JavaScript termuat di beranda serta halaman internal.
+7. Semua isi utama tetap dapat diakses saat JavaScript dimatikan.
 
 ## GitHub Pages — tahap selanjutnya
 
 Setelah file baru diunggah ke root repository pada branch `main`, buka Settings → Pages. Pilih Deploy from a branch, branch `main`, folder `/ (root)`, lalu Save. Alamat yang diharapkan: https://appssdnegerikesiman.github.io/sdn3kesiman/ . Tunggu proses deployment selesai sebelum pengujian.
 
-Semua aset memakai path relatif `./assets/...`, bukan `/assets/...`, sehingga kompatibel dengan subfolder `/sdn3kesiman/`. Tidak ada framework, font eksternal, pelacak, atau pustaka tambahan.
+Semua aset memakai path relatif terhadap halaman, bukan `/assets/...`, sehingga kompatibel dengan subfolder `/sdn3kesiman/`. Tidak ada framework, font eksternal, pelacak, atau pustaka tambahan.
 
 Domain `sdn3kesiman.sch.id` belum dikonfigurasi. Jangan menambahkan CNAME sebelum tahap pengaturan domain dan DNS.
 

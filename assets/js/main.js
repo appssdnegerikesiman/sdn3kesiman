@@ -27,8 +27,20 @@ if (menuButton && navigation) {
     }
   });
 
-  window.matchMedia('(min-width: 1001px)').addEventListener('change', closeMenu);
+  window.matchMedia('(min-width: 861px)').addEventListener('change', closeMenu);
 }
 
 const year = document.querySelector('#tahun');
 if (year) year.textContent = new Date().getFullYear();
+
+// Tandai menu halaman aktif pada halaman internal.
+if (navigation && window.location.pathname !== '/') {
+  const currentPath = window.location.pathname.replace(/index\.html$/, '');
+  navigation.querySelectorAll('a').forEach((link) => {
+    const linkPath = new URL(link.href, window.location.href).pathname.replace(/index\.html$/, '');
+    if (linkPath !== '/' && currentPath.startsWith(linkPath)) {
+      navigation.querySelectorAll('[aria-current]').forEach((item) => item.removeAttribute('aria-current'));
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+}
