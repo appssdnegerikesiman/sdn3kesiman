@@ -30,3 +30,7 @@
 @media(max-width:960px){.hero-layout{grid-template-columns:minmax(0,1fr) 340px;gap:28px}.hero h1{font-size:clamp(3.2rem,7vw,5rem)}}
 @media(max-width:760px){.hero{height:auto;min-height:0;padding:100px 0 38px;align-items:start}.hero-layout{grid-template-columns:1fr;gap:34px;padding-bottom:0}.hero-layout .hero-content{padding:0}.hero-news{width:100%;padding:17px}.hero-caption{display:none}}
 @media(max-width:650px){.hero-layout{width:min(100% - 30px,1180px)}.hero h1{font-size:3.2rem}.hero-news-item{grid-template-columns:90px 1fr}.hero-news-item img{width:90px;height:70px}}
+/* Ringkasan berita hero yang lebih ringkas */
+.hero-layout{grid-template-columns:minmax(0,1fr) 320px;gap:42px}.hero-news{padding:14px;border-radius:17px}.hero-news-head{padding:0 1px 10px}.hero-news-head h2{font-size:1.08rem}.hero-news-item{grid-template-columns:76px 1fr;gap:11px;padding:10px 1px}.hero-news-item img{width:76px;height:56px;border-radius:9px}.hero-news-item strong{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;font-size:.72rem}.hero-news-item small,.hero-news-item time{font-size:.53rem}
+@media(max-width:960px){.hero-layout{grid-template-columns:minmax(0,1fr) 290px;gap:24px}}
+@media(max-width:760px){.hero-news{max-width:345px;padding:13px}.hero-news-head h2{font-size:1rem}.hero-news-item{grid-template-columns:68px 1fr;padding:9px 1px}.hero-news-item img{width:68px;height:51px}}
