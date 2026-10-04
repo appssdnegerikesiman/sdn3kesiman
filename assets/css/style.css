@@ -39,3 +39,7 @@
 @media(max-width:860px){.site-header.is-scrolled{height:64px}.site-header.is-scrolled nav{top:64px}.back-to-top{right:15px;bottom:15px;width:42px;height:42px}}
 @media(max-width:650px){.article-related{margin-top:55px}.article-related>div{grid-template-columns:1fr}.article-related a{min-height:145px}.reading-progress{height:3px}}
 @media(prefers-reduced-motion:reduce){.site-header,.back-to-top,.reading-progress i,.article-related a{transition:none}.back-to-top:hover{transform:none}}
+
+/* Identitas portal SATRIA */
+.brand small{max-width:275px;font-size:.58rem;line-height:1.25;letter-spacing:.015em}
+@media(max-width:640px){.brand{gap:9px}.brand img{width:44px;height:44px}.brand strong{font-size:.84rem}.brand small{max-width:205px;font-size:.52rem;line-height:1.2}}
