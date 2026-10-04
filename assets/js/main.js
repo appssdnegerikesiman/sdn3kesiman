@@ -105,24 +105,3 @@ if (relatedItems && articleBody) {
   related.innerHTML = `<p>Jelajahi selanjutnya</p><h2>Informasi yang berkaitan</h2><div>${relatedItems.map(([title, href, text]) => `<a href="${href}"><strong>${title}</strong><span>${text}</span><b aria-hidden="true">→</b></a>`).join('')}</div>`;
   articleBody.append(related);
 }
-
-// Asisten navigasi SATRIA tersedia di seluruh halaman.
-const mainScript = document.querySelector('script[src*="assets/js/main.js"]');
-if (mainScript) {
-  const siteRoot = new URL('../../', mainScript.src);
-  const mascotImage = new URL('../images/mascot/satria-laptop.webp', mainScript.src);
-  const helper = document.createElement('div');
-  helper.className = 'mascot-helper';
-  helper.innerHTML = `<aside class="mascot-helper-panel" id="mascot-helper-panel" hidden><strong>Halo, aku Satria!</strong><small>Aku bantu kamu menemukan informasi sekolah.</small><nav aria-label="Akses cepat SATRIA"><a href="${new URL('profil/', siteRoot)}">Profil sekolah</a><a href="${new URL('program/', siteRoot)}">Program unggulan</a><a href="${new URL('berita/', siteRoot)}">Berita terbaru</a><a href="${new URL('pengumuman/', siteRoot)}">Pengumuman</a><a href="${new URL('kontak/', siteRoot)}">Kontak sekolah</a></nav></aside><button class="mascot-helper-toggle" type="button" aria-expanded="false" aria-controls="mascot-helper-panel"><img src="${mascotImage}" alt="" width="54" height="54"><span>Bantuan SATRIA</span></button>`;
-  document.body.append(helper);
-  const helperButton = helper.querySelector('.mascot-helper-toggle');
-  const helperPanel = helper.querySelector('.mascot-helper-panel');
-  const closeHelper = () => { helperPanel.hidden = true; helperButton.setAttribute('aria-expanded', 'false'); };
-  helperButton.addEventListener('click', () => {
-    const willOpen = helperPanel.hidden;
-    helperPanel.hidden = !willOpen;
-    helperButton.setAttribute('aria-expanded', String(willOpen));
-  });
-  document.addEventListener('click', (event) => { if (!helper.contains(event.target)) closeHelper(); });
-  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeHelper(); });
-}
